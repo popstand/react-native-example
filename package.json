@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "BABEL_ENV=server babel-node ./server.js"
   },
   "dependencies": {
     "babel-cli": "^6.7.5",
@@ -11,16 +10,11 @@
     "babel-preset-react-native": "^1.5.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-relay-plugin": "^0.7.3",
-    "express": "4.13.4",
-    "express-graphql": "0.4.9",
-    "graphql": "0.4.17",
-    "graphql-relay": "0.3.6",
     "react": "^0.14.5",
     "react-native": "^0.23.1",
     "react-native-listitem": "1.0.5",
     "react-native-swipeout": "2.0.12",
-    "react-relay": "^0.7.3",
-    "webpack": "^1.12.15"
+    "react-relay": "^0.7.3"
   },
   "devDependencies": {
     "babel-cli": "^6.6.4",
