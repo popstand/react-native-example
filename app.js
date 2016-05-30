@@ -1,37 +1,37 @@
 /* eslint-env es6 */
-var React = require('react')
-var Relay = require('react-relay')
+import React from 'react';
+import {
+  View,
+  Text,
+} from 'react-native';
 
-import { Mutation } from 'react-relay';
+import Relay, { Mutation } from 'react-relay';
 
 Relay.injectNetworkLayer(
-  new Relay.DefaultNetworkLayer('http://192.168.1.6:1337/graphql'
+  new Relay.DefaultNetworkLayer('http://localhost:1337/graphql'
   )
 );
 
 class Post extends React.Component {
   render() {
-    return <li>{ this.props.post.title }</li>
+    return <Text>{ this.props.post.title }</Text>
   }
 }
 
 class Posts extends React.Component {
   render() {
     let page = this.props.page;
-    let posts = page.posts
+    let posts = page.posts;
+
+    console.log(this.props);
 
     return (
-      <div>
-      <h2>Posts Page:</h2>
-        <ul>
-        {
-          posts.map(function(post) {
-            console.log(post);
-            return <Post post={ post }></Post>
-          })
-        }
-        </ul>
-      </div>
+      <View style={{marginTop: 30}}>
+      <Text>Posts Page:</Text>
+        <View>
+        {posts.map((post) => <Post key={post.id} post={ post } />)}
+        </View>
+      </View>
     )
   }
 }
